@@ -9,7 +9,7 @@ namespace Selenium_SYE
 {
     public class HomePageElements
     {
-        public void GetElectricity(IWebElement _driver)
+        public void GetElectricity(IWebDriver _driver)
         {
             var getElec = _driver.FindElement(By.XPath("//*[@id='top']/div/div/div/div[2]/div/div/quote-starter/div/div[1]/div[2]/a[1]/span/img"));
             getElec.Click();
