@@ -49,7 +49,7 @@ namespace Selenium_SYE_Tests
 
         [TestMethod]
         [TestCategory("Electricity Quote")]
-        public void Electricity()
+        public void Electricity_RunSmooth()
         {
             element._driver = _driver;
             browser.StartBrowser(_driver);
