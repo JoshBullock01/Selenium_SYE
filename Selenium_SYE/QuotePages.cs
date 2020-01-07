@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -87,7 +88,7 @@ namespace Selenium_SYE
             last.SendKeys(lastName);
             var pos = _driver.FindElement(By.XPath("//*[@id='position']"));
             pos.SendKeys(position);
-            var phoneNum = _driver.FindElement(By.XPath("//*[@id='position']"));
+            var phoneNum = _driver.FindElement(By.XPath("/html/body/div[1]/div/div/form/div/div[1]/div[2]/div/div/div/div[1]/div[5]/div/input"));
             phoneNum.SendKeys(phone);
         }
 
@@ -95,7 +96,7 @@ namespace Selenium_SYE
         {
             var bank = _driver.FindElement(By.XPath("//*[@id='bankname']"));
             bank.SendKeys(bankName);
-            var account = _driver.FindElement(By.XPath("//*[@id='bankname']"));
+            var account = _driver.FindElement(By.XPath("//*[@id='accountname']"));
             account.SendKeys(accountName);
             var sort = _driver.FindElement(By.XPath("//*[@id='sortcode']"));
             sort.SendKeys(sortCode);
@@ -153,12 +154,15 @@ namespace Selenium_SYE
             }
         }
 
-        //private static void WaitForElement(this IWebDriver _driver, By locator, int waitTime = 2000)
-        //{
-        //    var waiter = new WebDriverWait(_driver, TimeSpan.FromMilliseconds(waitTime));
+        public void SubmitQuote(IWebDriver _driver)
+        {
+            var submit = _driver.FindElement(By.XPath("//*[@id='complete']"));
+     
+            Actions actions = new Actions(_driver);
+            actions.MoveToElement(submit);
+            actions.Perform();
 
-        //    waiter.Until(ExpectedConditions.ElementIsVisible(locator));
-
-        //}
+            submit.Click();
+        }
     }
 }
