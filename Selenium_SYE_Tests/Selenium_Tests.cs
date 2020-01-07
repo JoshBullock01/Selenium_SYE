@@ -13,7 +13,7 @@ namespace Selenium_SYE_Tests
 
         private readonly Selenium_Setup browser = new Selenium_Setup();
         private readonly HomePageElements elements = new HomePageElements();
-        private readonly QuotePage_One quoteElements = new QuotePage_One();
+        private readonly QuotePages quoteElements = new QuotePages();
 
         [TestMethod]
         [TestCategory("SiteTest")]
@@ -38,8 +38,8 @@ namespace Selenium_SYE_Tests
             elements.GetElectricity(_driver);
 
             quoteElements.QuotePageOne(_driver, "test@test.com");
-
-            
+            quoteElements.QuotePageTwo(_driver, "Fidelity Energy Limited");
+            quoteElements.QuotePageThree(_driver, "038012011300001439650", "20000", null, "01012020", 3);            
         }
 
 
