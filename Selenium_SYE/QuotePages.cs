@@ -2,8 +2,11 @@
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Selenium_SYE
@@ -57,10 +60,81 @@ namespace Selenium_SYE
             ClickNext(_driver);
         }
 
+        /// <summary>
+        /// Method used for picking the first quote that pops up just to finish cycle
+        /// </summary>
+        /// <param name="_driver"></param>
+        public void ListOfQuotes(IWebDriver _driver)
+        {
+            ////TODO add a wait to visible function 
+            //Thread.Sleep(10000);
+            //var quote = _driver.FindElement(By.XPath("//*[@id='71ec5654 - f3ad - 4611 - 967a - 2aa452ab9f1f']/div/ul/li[5]/button[1]"));
+            //quote.Click();
+            //_driver.Close();
+
+            SelectQuote(_driver, 1);
+        }
+
+        public void ContactDetails(IWebDriver _driver, string title, string firstName, string lastName, string position, string phone)
+        {
+            // Add code to decide what index is what title
+            SelectElement supplier = new SelectElement(_driver.FindElement(By.XPath("//*[@id='titleselect']")));
+            supplier.SelectByIndex(1);
+
+            var first = _driver.FindElement(By.XPath("//*[@id='firstname']"));
+            first.SendKeys(firstName);
+            var last = _driver.FindElement(By.XPath("//*[@id='surname']"));
+            last.SendKeys(lastName);
+            var pos = _driver.FindElement(By.XPath("//*[@id='position']"));
+            pos.SendKeys(position);
+            var phoneNum = _driver.FindElement(By.XPath("//*[@id='position']"));
+            phoneNum.SendKeys(phone);
+        }
+
+        public void BankDetails(IWebDriver _driver, string bankName, string accountName, string sortCode, string accountNumber)
+        {
+            var bank = _driver.FindElement(By.XPath("//*[@id='bankname']"));
+            bank.SendKeys(bankName);
+            var account = _driver.FindElement(By.XPath("//*[@id='bankname']"));
+            account.SendKeys(accountName);
+            var sort = _driver.FindElement(By.XPath("//*[@id='sortcode']"));
+            sort.SendKeys(sortCode);
+            var accountNum = _driver.FindElement(By.XPath("//*[@id='accountnumber']"));
+            accountNum.SendKeys(accountNumber);
+
+            ClickNext(_driver);
+        }
+
         private void ClickNext(IWebDriver _driver)
         {
             var next = _driver.FindElement(By.XPath("//*[@id='next']"));
             next.Click();
+        }
+
+        public void SelectQuote(IWebDriver _driver, int resultListIndex, int timeout = 30000)
+        {
+            ReadOnlyCollection<IWebElement> buttons = null;
+
+            resultListIndex += 1;
+
+            var watch = Stopwatch.StartNew();
+            while (buttons == null && watch.ElapsedMilliseconds < timeout)
+            {
+                try
+                {
+                    var tmp = _driver.FindElements(By.XPath("//button[@class='btn btn-success']"));
+                    if (tmp.Count > resultListIndex)
+                        buttons = tmp;
+                }
+                catch
+                {
+                    Thread.Sleep(1);
+                }
+            }
+            watch.Stop();
+            var choice = buttons.Where(b => b.Displayed && b.Text.Contains("Select")).ToList()[resultListIndex];
+
+            choice.Click();
         }
 
         private IWebElement GetCompanyResult(IWebDriver _driver, int index)
