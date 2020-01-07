@@ -9,19 +9,19 @@ namespace Selenium_SYE
 {
     public class HomePageElements
     {
-        public void GetElectricity(IWebDriver _driver)
+        public void ChooseElectricity(IWebDriver _driver)
         {
             var getElec = _driver.FindElement(By.XPath("//*[@id='top']/div/div/div/div[2]/div/div/quote-starter/div/div[1]/div[2]/a[1]/span/img"));
             getElec.Click();
         }
 
-        public void GetGas(IWebDriver _driver)
+        public void ChooseGas(IWebDriver _driver)
         {
             var getGas = _driver.FindElement(By.XPath("//*[@id='top']/div/div/div/div[2]/div/div/quote-starter/div/div[1]/div[2]/a[3]"));
             getGas.Click();
         }
 
-        public void GetDualEnergy(IWebDriver _driver)
+        public void ChooseDualEnergy(IWebDriver _driver)
         {
             var getDual = _driver.FindElement(By.XPath("//*[@id='top']/div/div/div/div[2]/div/div/quote-starter/div/div[1]/div[2]/a[2]"));
             getDual.Click();
