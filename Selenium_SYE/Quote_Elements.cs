@@ -25,7 +25,10 @@ namespace Selenium_SYE
         /// <param name="mpan"></param>
         public void MPAN_Input(string mpan)
         {
-            var mpanInput = _driver.FindElement(By.XPath("//*[@id='PC']"));
+            var xpath = "//*[@id='PC']";
+            WaitForElement(xpath);
+
+            var mpanInput = _driver.FindElement(By.XPath(xpath));
             mpanInput.SendKeys(mpan);
         }
 
@@ -35,6 +38,13 @@ namespace Selenium_SYE
         #endregion
 
         #region Specific Gas
+
+        public void MPRN_Input(string mprn)
+        {
+            var mprnIn = _driver.FindElement(By.XPath("/html/body/div[1]/div/div/form/div/div[1]/div[2]/div/div/div/div[1]/div/input"));
+            mprnIn.SendKeys(mprn);
+        }
+
         #endregion
 
         #region Shared Elements
@@ -45,12 +55,19 @@ namespace Selenium_SYE
         /// </summary>
         /// <param name="_driver"></param>
         /// <param name="email"></param>
-        public void Email_Input(string email)
+        public IWebElement Email_Input(string email)
         {
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            var emailIn = _driver.FindElement(By.XPath("//*[@id='Email']"));
+            //_driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+
+            var emailXpath = "//*[@id='Email']";
+            WaitForElement(emailXpath);
+
+            var emailIn = _driver.FindElement(By.XPath(emailXpath));
             emailIn.SendKeys(email);
+
+            return emailIn;
         }
+
 
         /// <summary>
         /// Clicks the consent tick box on page 1
@@ -75,7 +92,11 @@ namespace Selenium_SYE
         public void CompanyChoice_Input(string companyName, int index)
         {
             //Inputs company name
-            var companyFinder = _driver.FindElement(By.XPath("//*[@id='coSearch']/div/div/input"));
+            var companyXpath = "//*[@id='coSearch']/div/div/input";
+
+            WaitForElement(companyXpath);
+
+            var companyFinder = _driver.FindElement(By.XPath(companyXpath));
             companyFinder.SendKeys(companyName);
 
             //Clicks search
@@ -96,10 +117,21 @@ namespace Selenium_SYE
         /// </summary>
         /// <param name="_driver"></param>
         /// <param name="usageAmount"></param>
-        public void Usage_Input(string usageAmount)
+        public void Usage_Input(string usageAmount, bool isGas)
         {
-            var usage = _driver.FindElement(By.XPath("/html/body/div[1]/div/div/form/div/div[1]/div[2]/div/div/div/div[2]/div/estimated-usage/div[1]/div[1]/input"));
-            usage.SendKeys(usageAmount);
+            var elecXpath = "/html/body/div[1]/div/div/form/div/div[1]/div[2]/div/div/div/div[2]/div/estimated-usage/div[1]/div[1]/input";
+            var gasXpath = "/html/body/div[1]/div/div/form/div/div[1]/div[2]/div/div/div/div[3]/div/div/estimated-usage/div[1]/div[1]/input";
+            
+            WaitForElement(elecXpath);
+            WaitForElement(gasXpath);
+
+            var usage = _driver.FindElement(By.XPath(elecXpath));
+            var gasUsage = _driver.FindElement(By.XPath(gasXpath));
+
+            if (!isGas) 
+                usage.SendKeys(usageAmount);
+            else 
+                gasUsage.SendKeys(usageAmount);
         }
 
         /// <summary>
@@ -110,7 +142,7 @@ namespace Selenium_SYE
         public void Current_Supplier_Input(int supplierIndex)
         {
             SelectElement supplier = new SelectElement(_driver.FindElement(By.XPath("//*[@id='supplier']/select")));
-            supplier.SelectByIndex(supplierIndex);
+            supplier.SelectByIndex(1);
         }
 
         /// <summary>
@@ -123,7 +155,6 @@ namespace Selenium_SYE
             var date = _driver.FindElement(By.XPath("//*[@id='datepicker']/div/input"));
             date.SendKeys(contractEnd);
         }
-
 
         #endregion
 
@@ -166,7 +197,7 @@ namespace Selenium_SYE
         public void Title_Picker(int index)
         {
             SelectElement supplier = new SelectElement(_driver.FindElement(By.XPath("//*[@id='titleselect']")));
-            supplier.SelectByIndex(index);
+            supplier.SelectByIndex(1);
         }
 
         public void FirstName_Input(string firstName)
@@ -225,6 +256,7 @@ namespace Selenium_SYE
         {
             try
             {
+                WaitForElement("//a[@data-bind=\"click: $parent.Select.bind($data)\"]");
                 var loc = By.XPath("//a[@data-bind=\"click: $parent.Select.bind($data)\"]");
 
                 //_driver.WaitForElement(_driver, loc);
@@ -242,9 +274,20 @@ namespace Selenium_SYE
         /// </summary>
         public void ClickNext()
         {
-            var next = _driver.FindElement(By.XPath("//*[@id='next']"));
+            var xpath = "//*[@id='next']";
+
+            WaitForElement(xpath);
+
+            var next = _driver.FindElement(By.XPath(xpath));
             next.Click();
         }
+
+        private void WaitForElement(string xpath)
+        {
+            WebDriverWait waitForElement = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
+            waitForElement.Until(ExpectedConditions.ElementIsVisible(By.XPath(xpath)));
+        }
+
         #endregion
     }
 }
