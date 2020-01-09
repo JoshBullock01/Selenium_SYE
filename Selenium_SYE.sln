@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenium_SYE", "Selenium_SY
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenium_SYE_Tests", "Selenium_SYE_Tests\Selenium_SYE_Tests.csproj", "{03FDF76C-7134-408A-8F3F-671EE8C09BF3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenium_SYE_Interface", "Selenium_SYE_Interface\Selenium_SYE_Interface.csproj", "{FAD27005-894B-44A3-8C40-7484DB615649}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{03FDF76C-7134-408A-8F3F-671EE8C09BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03FDF76C-7134-408A-8F3F-671EE8C09BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03FDF76C-7134-408A-8F3F-671EE8C09BF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAD27005-894B-44A3-8C40-7484DB615649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAD27005-894B-44A3-8C40-7484DB615649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAD27005-894B-44A3-8C40-7484DB615649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAD27005-894B-44A3-8C40-7484DB615649}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

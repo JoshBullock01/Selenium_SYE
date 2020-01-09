@@ -59,8 +59,6 @@ namespace Selenium_SYE_Tests
             }
         }
 
-
-
         [TestMethod]
         [TestCategory("Quotes")]
         public void Gas_Run_Smooth()
@@ -122,7 +120,7 @@ namespace Selenium_SYE_Tests
         private void ElecPresetValues()
         {
             element.MPAN_Input("038012011300001439650");
-            element.Usage_Input("20000", false);
+            element.Usage_Input("20000", true);
             element.Current_Supplier_Input(0);
             element.ContractEnd_Input("01012020");
             element.ClickNext();
