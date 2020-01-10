@@ -64,9 +64,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Selenium_SYE\Selenium_SYE.csproj">
-      <Project>{23136ffa-0c40-41ef-87b7-3c647eee5dbe}</Project>
-      <Name>Selenium_SYE</Name>
+    <ProjectReference Include="..\Selenium_SYE_Classes\Selenium_SYE_Classes.csproj">
+      <Project>{068D49F0-D974-4ED2-B833-6F39B7BC1070}</Project>
+      <Name>Selenium_SYE_Classes</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

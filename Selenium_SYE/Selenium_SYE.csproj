@@ -55,8 +55,6 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="HomePageElements.cs" />
-    <Compile Include="QuotePages.cs" />
     <Compile Include="Quote_Elements.cs" />
     <Compile Include="Selenium_Setup.cs" />
   </ItemGroup>

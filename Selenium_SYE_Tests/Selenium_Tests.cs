@@ -3,7 +3,7 @@ using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using Selenium_SYE;
+using Selenium_SYE_Classes;
 
 namespace Selenium_SYE_Tests
 {
@@ -12,7 +12,6 @@ namespace Selenium_SYE_Tests
     {
         private readonly IWebDriver _driver = new ChromeDriver();
         private readonly Selenium_Setup browser = new Selenium_Setup();
-        private readonly HomePageElements fuelType = new HomePageElements();
         private readonly Quote_Elements element = new Quote_Elements();
 
         [TestMethod]
@@ -39,7 +38,7 @@ namespace Selenium_SYE_Tests
                 StartTest();
 
                 // Home Page
-                fuelType.Electricity(_driver);
+                element.Electricity();
 
                 PageOne();
                 PageTwo();
@@ -66,7 +65,7 @@ namespace Selenium_SYE_Tests
             StartTest();
 
             // Home Page
-            fuelType.Gas(_driver);
+            element.Gas();
 
             PageOne();
             PageTwo();
@@ -88,7 +87,7 @@ namespace Selenium_SYE_Tests
         public void TestDualQuote()
         {
             StartTest();
-            fuelType.DualEnergy(_driver);
+            element.DualEnergy();
 
             PageOne();
             PageTwo();
@@ -106,6 +105,7 @@ namespace Selenium_SYE_Tests
             element._driver = _driver;
             browser.StartBrowser(_driver);
         }
+
         private void PageOne()
         {
             element.Email_Input("testemail@test.co.uk");

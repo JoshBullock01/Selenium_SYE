@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Selenium_SYE_Classes;
+using Selenium_SYE_Interface;
+using System;
+
 using System.Windows.Forms;
 
 namespace Selenium_SYE_Interface
 {
     public partial class Form1 : Form
     {
+        private readonly Validation val = new Validation();
+        private readonly Quote_Elements element = new Quote_Elements();
+
         public Form1()
         {
             InitializeComponent();
@@ -19,49 +18,51 @@ namespace Selenium_SYE_Interface
 
         private void Start_Click(object sender, EventArgs e)
         {
-            var energyType = Get_Fuel.Text;
+            var firstName = val.ValidateIsText(Get_FirstName.Text);
+            var surname = val.ValidateIsText(Get_Surname.Text);
+            var phone = val.ValidatePhone(Int32.Parse(Get_Phone.Text));
+            var jobTitle = val.ValidateIsText(Get_Job.Text);
 
-            var firstName = Get_FirstName.Text;
-            var surname = Get_Surname.Text;
-            var phone = Int32.Parse(Get_Phone.Text);
-            var jobTitle = Get_Job.Text;
+            var mprn = val.ValidateMPRN(Get_MPRN.Text);
+            var mpan = val.ValidateMPAN(Get_MPAN.Text);
 
-            var email = Get_Email.Text;
-            var mprn = Get_MPRN.Text;
-            var mpan = Get_MPAN.Text;
 
-            ValidateEmail(email);
+   
+            // Get Choice Of Energy
+            ChooseFuel(val.ValidateFuel(Get_Fuel.Text));
 
-            //throw new Exception($"{firstName} {surname} {phone} {jobTitle} {email} {mprn} {mpan}, {energyType}");
+            element.Email_Input(val.ValidateEmail(Get_Email.Text));
+            CheckConsent();
+            element.ClickNext();
+
+            element.MPAN_Input(val.ValidateMPAN(Get_MPAN.Text));
+            element.Usage_Input(val.ValidateIsNumber(Usage_Input.Text), false);
+            element.Current_Supplier_Input(0);
+            element.ContractEnd_Input(DatePicker.Value.ToString("dd-MM-yyyy"));
+            element.ClickNext();
+
+
         }
 
-        /// <summary>
-        /// Checks Email Input to make sure the email address is valid
-        /// </summary>
-        /// <param name="email"></param>
-        /// <returns></returns>
-        private void ValidateEmail(string email)
+        private void ChooseFuel(string fuel)
         {
-            try
+            switch (fuel)
             {
-                var addr = new System.Net.Mail.MailAddress(email);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show($" Email: '{email}' is not valid. \n Please enter a valid Email Address", "Invalid Input");
+                case "Electricity":
+                    element.Electricity();
+                    break;
+                case "Gas":
+                    element.Gas();
+                    break;
+                case "Dual Energy":
+                    element.DualEnergy();
+                    break;
             }
         }
 
-        private void ValidateMPAN(string mpan)
+        private void CheckConsent()
         {
-            if (mpan.Length != 21)
-                MessageBox.Show("Invalid Input", $"Please enter a valid MPAN");
-        }
-
-        private void ValidateMPRN(string mprn)
-        {
-            if (mprn.Length < 6) 
-                MessageBox.Show("Invalid Input", $"Please enter a valid MPRN");
+            if (Consent_Input.Checked) element.ConsentBox_Clicker();
         }
     }
 }

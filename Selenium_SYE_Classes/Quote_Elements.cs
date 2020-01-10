@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Selenium_SYE
+namespace Selenium_SYE_Classes
 {
     public class Quote_Elements
     {
