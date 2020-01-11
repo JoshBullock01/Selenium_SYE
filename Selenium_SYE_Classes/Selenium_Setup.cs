@@ -10,12 +10,14 @@ namespace Selenium_SYE_Classes
 {
     public class Selenium_Setup
     {
-        public void StartBrowser(IWebDriver _driver)
+        public IWebDriver _driver { get; set; }
+
+        public void StartBrowser()
         {
             _driver.Url = "https://www.switchyourenergy.com/";
         }
 
-        public void KillBrowser(IWebDriver _driver)
+        public void KillBrowser()
         {
             _driver.Close();
         }

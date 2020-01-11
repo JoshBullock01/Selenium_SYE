@@ -85,7 +85,7 @@ namespace Selenium_SYE_Interface
                 if (Regex.IsMatch(text, @"^[a-zA-Z]+$"))
                     t = false;
             } while (t);
-            return text;            
+            return text;
         }
 
         public string ValidateIsNumber(string num)
@@ -97,6 +97,30 @@ namespace Selenium_SYE_Interface
                     t = false;
             } while (t);
             return num;
+        }
+
+        public string ValidateAccountNum(string acc)
+        {
+            var t = true;
+            var a = ValidateIsNumber(acc);
+            do
+            {
+                if (a.Length == 8)
+                    t = false;
+            } while (t);
+            return a;
+        }
+
+        public string ValidateSortCode(string sort)
+        {
+            var t = true;
+            var a = ValidateIsNumber(sort);
+            do
+            {
+                if (a.Length == 6)
+                    t = false;
+            } while (t);
+            return a;
         }
     }
 }

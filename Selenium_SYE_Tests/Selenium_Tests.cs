@@ -20,13 +20,13 @@ namespace Selenium_SYE_Tests
         {
             try
             {
-                browser.StartBrowser(_driver);
+                browser.StartBrowser();
             }
             catch (Exception)
             {
                 throw new Exception("Browser did not start");
             }
-            browser.KillBrowser(_driver);
+            browser.KillBrowser();
         }
 
         [TestMethod]
@@ -49,7 +49,7 @@ namespace Selenium_SYE_Tests
                 QuoteAndContact();
 
                 // Close Browser
-                browser.KillBrowser(_driver);
+                browser.KillBrowser();
             }
             catch (Exception)
             {
@@ -77,7 +77,7 @@ namespace Selenium_SYE_Tests
             QuoteAndContact();
 
             // Close Browser
-            browser.KillBrowser(_driver);
+            browser.KillBrowser();
 
         }
 
@@ -103,7 +103,7 @@ namespace Selenium_SYE_Tests
         private void StartTest()
         {
             element._driver = _driver;
-            browser.StartBrowser(_driver);
+            browser.StartBrowser();
         }
 
         private void PageOne()

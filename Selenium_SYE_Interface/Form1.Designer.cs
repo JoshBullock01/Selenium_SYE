@@ -44,6 +44,10 @@
             this.Get_Surname = new System.Windows.Forms.TextBox();
             this.Get_FirstName = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Usage_Input = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.DatePicker = new System.Windows.Forms.DateTimePicker();
             this.Get_MPRN = new System.Windows.Forms.TextBox();
             this.Get_MPAN = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -51,19 +55,27 @@
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.Consent_Input = new System.Windows.Forms.CheckBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.Usage_Input = new System.Windows.Forms.TextBox();
-            this.DatePicker = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.Company_Input = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.Get_BankName = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Get_AccountName = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.Get_SortCode = new System.Windows.Forms.TextBox();
+            this.Get_AccountNumber = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // GetInfo
             // 
-            this.GetInfo.Location = new System.Drawing.Point(12, 255);
+            this.GetInfo.Location = new System.Drawing.Point(12, 331);
             this.GetInfo.Name = "GetInfo";
-            this.GetInfo.Size = new System.Drawing.Size(433, 44);
+            this.GetInfo.Size = new System.Drawing.Size(433, 60);
             this.GetInfo.TabIndex = 0;
             this.GetInfo.Text = "Start";
             this.GetInfo.UseVisualStyleBackColor = true;
@@ -109,7 +121,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 37);
+            this.label3.Location = new System.Drawing.Point(6, 51);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 6;
@@ -118,7 +130,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 65);
+            this.label4.Location = new System.Drawing.Point(6, 81);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 7;
@@ -127,7 +139,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 95);
+            this.label5.Location = new System.Drawing.Point(6, 110);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 13);
             this.label5.TabIndex = 8;
@@ -136,7 +148,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 124);
+            this.label6.Location = new System.Drawing.Point(6, 140);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 9;
@@ -144,6 +156,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Company_Input);
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.Get_Job);
             this.groupBox1.Controls.Add(this.Get_Phone);
             this.groupBox1.Controls.Add(this.Get_Surname);
@@ -161,28 +175,28 @@
             // 
             // Get_Job
             // 
-            this.Get_Job.Location = new System.Drawing.Point(65, 121);
+            this.Get_Job.Location = new System.Drawing.Point(65, 137);
             this.Get_Job.Name = "Get_Job";
             this.Get_Job.Size = new System.Drawing.Size(129, 20);
             this.Get_Job.TabIndex = 13;
             // 
             // Get_Phone
             // 
-            this.Get_Phone.Location = new System.Drawing.Point(78, 92);
+            this.Get_Phone.Location = new System.Drawing.Point(78, 107);
             this.Get_Phone.Name = "Get_Phone";
             this.Get_Phone.Size = new System.Drawing.Size(116, 20);
             this.Get_Phone.TabIndex = 12;
             // 
             // Get_Surname
             // 
-            this.Get_Surname.Location = new System.Drawing.Point(64, 62);
+            this.Get_Surname.Location = new System.Drawing.Point(67, 78);
             this.Get_Surname.Name = "Get_Surname";
-            this.Get_Surname.Size = new System.Drawing.Size(130, 20);
+            this.Get_Surname.Size = new System.Drawing.Size(127, 20);
             this.Get_Surname.TabIndex = 11;
             // 
             // Get_FirstName
             // 
-            this.Get_FirstName.Location = new System.Drawing.Point(72, 34);
+            this.Get_FirstName.Location = new System.Drawing.Point(72, 48);
             this.Get_FirstName.Name = "Get_FirstName";
             this.Get_FirstName.Size = new System.Drawing.Size(122, 20);
             this.Get_FirstName.TabIndex = 10;
@@ -207,6 +221,38 @@
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quote Info";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 169);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(72, 13);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Contract End:";
+            // 
+            // Usage_Input
+            // 
+            this.Usage_Input.Location = new System.Drawing.Point(53, 137);
+            this.Usage_Input.Name = "Usage_Input";
+            this.Usage_Input.Size = new System.Drawing.Size(168, 20);
+            this.Usage_Input.TabIndex = 18;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 140);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 13);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "Usage:";
+            // 
+            // DatePicker
+            // 
+            this.DatePicker.Location = new System.Drawing.Point(84, 163);
+            this.DatePicker.Name = "DatePicker";
+            this.DatePicker.Size = new System.Drawing.Size(137, 20);
+            this.DatePicker.TabIndex = 19;
             // 
             // Get_MPRN
             // 
@@ -254,50 +300,116 @@
             // Consent_Input
             // 
             this.Consent_Input.AutoSize = true;
-            this.Consent_Input.Location = new System.Drawing.Point(245, 224);
+            this.Consent_Input.Location = new System.Drawing.Point(246, 232);
             this.Consent_Input.Name = "Consent_Input";
             this.Consent_Input.Size = new System.Drawing.Size(71, 17);
             this.Consent_Input.TabIndex = 13;
             this.Consent_Input.Text = "Consent?";
             this.Consent_Input.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // label12
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 140);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "Usage:";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 23);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 13);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Company:";
             // 
-            // Usage_Input
+            // Company_Input
             // 
-            this.Usage_Input.Location = new System.Drawing.Point(53, 137);
-            this.Usage_Input.Name = "Usage_Input";
-            this.Usage_Input.Size = new System.Drawing.Size(168, 20);
-            this.Usage_Input.TabIndex = 18;
+            this.Company_Input.Location = new System.Drawing.Point(66, 18);
+            this.Company_Input.Name = "Company_Input";
+            this.Company_Input.Size = new System.Drawing.Size(128, 20);
+            this.Company_Input.TabIndex = 15;
             // 
-            // DatePicker
+            // groupBox3
             // 
-            this.DatePicker.Location = new System.Drawing.Point(84, 163);
-            this.DatePicker.Name = "DatePicker";
-            this.DatePicker.Size = new System.Drawing.Size(137, 20);
-            this.DatePicker.TabIndex = 19;
+            this.groupBox3.Controls.Add(this.Get_AccountNumber);
+            this.groupBox3.Controls.Add(this.Get_SortCode);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.Get_AccountName);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.Get_BankName);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Location = new System.Drawing.Point(12, 255);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(433, 70);
+            this.groupBox3.TabIndex = 14;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Bank Details";
             // 
-            // label10
+            // label13
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 169);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 13);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Contract End:";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(7, 47);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(81, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Account Name:";
+            // 
+            // Get_BankName
+            // 
+            this.Get_BankName.Location = new System.Drawing.Point(79, 17);
+            this.Get_BankName.Name = "Get_BankName";
+            this.Get_BankName.Size = new System.Drawing.Size(115, 20);
+            this.Get_BankName.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(7, 20);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(66, 13);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Bank Name:";
+            // 
+            // Get_AccountName
+            // 
+            this.Get_AccountName.Location = new System.Drawing.Point(94, 44);
+            this.Get_AccountName.Name = "Get_AccountName";
+            this.Get_AccountName.Size = new System.Drawing.Size(100, 20);
+            this.Get_AccountName.TabIndex = 3;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(239, 20);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(57, 13);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Sort Code:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(239, 47);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(75, 13);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "Account Num:";
+            // 
+            // Get_SortCode
+            // 
+            this.Get_SortCode.Location = new System.Drawing.Point(302, 17);
+            this.Get_SortCode.Name = "Get_SortCode";
+            this.Get_SortCode.Size = new System.Drawing.Size(125, 20);
+            this.Get_SortCode.TabIndex = 6;
+            // 
+            // Get_AccountNumber
+            // 
+            this.Get_AccountNumber.Location = new System.Drawing.Point(320, 44);
+            this.Get_AccountNumber.Name = "Get_AccountNumber";
+            this.Get_AccountNumber.Size = new System.Drawing.Size(107, 20);
+            this.Get_AccountNumber.TabIndex = 7;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 305);
+            this.ClientSize = new System.Drawing.Size(457, 400);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.Consent_Input);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox2);
@@ -309,6 +421,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,6 +456,17 @@
         private System.Windows.Forms.TextBox Usage_Input;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker DatePicker;
+        private System.Windows.Forms.TextBox Company_Input;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox Get_BankName;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox Get_AccountNumber;
+        private System.Windows.Forms.TextBox Get_SortCode;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox Get_AccountName;
+        private System.Windows.Forms.Label label14;
     }
 }
 
