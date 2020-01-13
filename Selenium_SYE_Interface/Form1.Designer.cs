@@ -39,6 +39,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Company_Input = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.Get_Job = new System.Windows.Forms.TextBox();
             this.Get_Phone = new System.Windows.Forms.TextBox();
             this.Get_Surname = new System.Windows.Forms.TextBox();
@@ -55,17 +57,16 @@
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.Consent_Input = new System.Windows.Forms.CheckBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.Company_Input = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.Get_BankName = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.Get_AccountName = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.Get_SortCode = new System.Windows.Forms.TextBox();
             this.Get_AccountNumber = new System.Windows.Forms.TextBox();
+            this.Get_SortCode = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.Get_AccountName = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Get_BankName = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.Start_Preset = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -172,6 +173,22 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contact Info";
+            // 
+            // Company_Input
+            // 
+            this.Company_Input.Location = new System.Drawing.Point(66, 18);
+            this.Company_Input.Name = "Company_Input";
+            this.Company_Input.Size = new System.Drawing.Size(128, 20);
+            this.Company_Input.TabIndex = 15;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 23);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 13);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Company:";
             // 
             // Get_Job
             // 
@@ -307,22 +324,6 @@
             this.Consent_Input.Text = "Consent?";
             this.Consent_Input.UseVisualStyleBackColor = true;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 23);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 13);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "Company:";
-            // 
-            // Company_Input
-            // 
-            this.Company_Input.Location = new System.Drawing.Point(66, 18);
-            this.Company_Input.Name = "Company_Input";
-            this.Company_Input.Size = new System.Drawing.Size(128, 20);
-            this.Company_Input.TabIndex = 15;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.Get_AccountNumber);
@@ -340,46 +341,19 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Bank Details";
             // 
-            // label13
+            // Get_AccountNumber
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(7, 47);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(81, 13);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Account Name:";
+            this.Get_AccountNumber.Location = new System.Drawing.Point(320, 44);
+            this.Get_AccountNumber.Name = "Get_AccountNumber";
+            this.Get_AccountNumber.Size = new System.Drawing.Size(107, 20);
+            this.Get_AccountNumber.TabIndex = 7;
             // 
-            // Get_BankName
+            // Get_SortCode
             // 
-            this.Get_BankName.Location = new System.Drawing.Point(79, 17);
-            this.Get_BankName.Name = "Get_BankName";
-            this.Get_BankName.Size = new System.Drawing.Size(115, 20);
-            this.Get_BankName.TabIndex = 1;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(7, 20);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(66, 13);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "Bank Name:";
-            // 
-            // Get_AccountName
-            // 
-            this.Get_AccountName.Location = new System.Drawing.Point(94, 44);
-            this.Get_AccountName.Name = "Get_AccountName";
-            this.Get_AccountName.Size = new System.Drawing.Size(100, 20);
-            this.Get_AccountName.TabIndex = 3;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(239, 20);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(57, 13);
-            this.label15.TabIndex = 4;
-            this.label15.Text = "Sort Code:";
+            this.Get_SortCode.Location = new System.Drawing.Point(302, 17);
+            this.Get_SortCode.Name = "Get_SortCode";
+            this.Get_SortCode.Size = new System.Drawing.Size(125, 20);
+            this.Get_SortCode.TabIndex = 6;
             // 
             // label16
             // 
@@ -390,25 +364,63 @@
             this.label16.TabIndex = 5;
             this.label16.Text = "Account Num:";
             // 
-            // Get_SortCode
+            // label15
             // 
-            this.Get_SortCode.Location = new System.Drawing.Point(302, 17);
-            this.Get_SortCode.Name = "Get_SortCode";
-            this.Get_SortCode.Size = new System.Drawing.Size(125, 20);
-            this.Get_SortCode.TabIndex = 6;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(239, 20);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(57, 13);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Sort Code:";
             // 
-            // Get_AccountNumber
+            // Get_AccountName
             // 
-            this.Get_AccountNumber.Location = new System.Drawing.Point(320, 44);
-            this.Get_AccountNumber.Name = "Get_AccountNumber";
-            this.Get_AccountNumber.Size = new System.Drawing.Size(107, 20);
-            this.Get_AccountNumber.TabIndex = 7;
+            this.Get_AccountName.Location = new System.Drawing.Point(94, 44);
+            this.Get_AccountName.Name = "Get_AccountName";
+            this.Get_AccountName.Size = new System.Drawing.Size(100, 20);
+            this.Get_AccountName.TabIndex = 3;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(7, 20);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(66, 13);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Bank Name:";
+            // 
+            // Get_BankName
+            // 
+            this.Get_BankName.Location = new System.Drawing.Point(79, 17);
+            this.Get_BankName.Name = "Get_BankName";
+            this.Get_BankName.Size = new System.Drawing.Size(115, 20);
+            this.Get_BankName.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(7, 47);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(81, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Account Name:";
+            // 
+            // Start_Preset
+            // 
+            this.Start_Preset.Location = new System.Drawing.Point(324, 228);
+            this.Start_Preset.Name = "Start_Preset";
+            this.Start_Preset.Size = new System.Drawing.Size(121, 23);
+            this.Start_Preset.TabIndex = 15;
+            this.Start_Preset.Text = "Use Preset?";
+            this.Start_Preset.UseVisualStyleBackColor = true;
+            this.Start_Preset.Click += new System.EventHandler(this.Start_Preset_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 400);
+            this.ClientSize = new System.Drawing.Size(457, 402);
+            this.Controls.Add(this.Start_Preset);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.Consent_Input);
             this.Controls.Add(this.label9);
@@ -467,6 +479,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox Get_AccountName;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button Start_Preset;
     }
 }
 
