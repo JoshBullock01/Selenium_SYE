@@ -310,6 +310,11 @@ namespace Selenium_SYE_Classes
             waitForElement.Until(ExpectedConditions.ElementIsVisible(By.XPath(xpath)));
         }
 
+        private void Hello()
+        {
+
+        }
+
         #endregion
     }
 }
